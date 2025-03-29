@@ -15,7 +15,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 
-public class Lennud 
+/*
+ * Lennu object andmete salvestamiseks andmebaasi.
+ */
+public class Flight 
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
