@@ -3,6 +3,7 @@ package com.Lennud.proj.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.Lennud.proj.dbmodels.Flight;
 import com.Lennud.proj.helper.FlightService;
 
+
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 public class FlightController
 {
