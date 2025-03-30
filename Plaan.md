@@ -14,4 +14,6 @@ Iteratioon 2
 
 1. Lennu istmete genereerimine andmete hoidimine jm.
 
+2. Lennu istmete saamise API.
+
 3. Lennu broneerimise leht.
