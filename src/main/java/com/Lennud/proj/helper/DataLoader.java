@@ -21,8 +21,8 @@ public class DataLoader
     public ApplicationRunner loadTestData() {
         return args -> 
         {
-            access.save(new Flight("TLN", "PDB", "20/10/2025", 2.5, 15, 15, 250f));
-            access.save(new Flight("TLN", "RIX", "20/10/2025", 3.5, 19, 15, 150f));
+            access.save(new Flight("TLN", "PDB", "2025-03-30", 2.5, 15, 15, 250f));
+            access.save(new Flight("TLN", "RIX", "2025-03-29", 3.5, 19, 15, 150f));
         };
     }
 }

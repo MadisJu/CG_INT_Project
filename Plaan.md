@@ -10,4 +10,6 @@ Backend java 21 springboot, frontend html, js, css
 
 4. Landing-page, automaatselt võtab kõik lennud ja kuvab, filtreid saab kõrvalt rakendada.
 
-5. Lennu broneerimise leht.
+Iteratioon 2
+
+1. Lennu broneerimise leht.
