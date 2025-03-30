@@ -1,5 +1,40 @@
-.object {
+.filter-container 
+{
     border: 1px solid #ccc;
     padding: 10px;
     margin: 5px;
+}
+
+.flights-container
+{
+
+}
+
+.object 
+{
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 10px;
+    position: relative;
+    background-color: #f9f9f9;
+}
+
+.flight 
+{
+    font-size: 1.5em;
+    flex-basis: 40%;
+}
+
+
+.date, .time-container
+{
+    flex-basis: 15%;
+}
+
+.price-container
+{
+    flex-basis: 20%;
 }
