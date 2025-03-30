@@ -26,4 +26,12 @@ public class SeatingController
 
         return seatService.getSeating(ID);
     }
+
+    @GetMapping("/api/suggestedseats")
+    public List<Integer> getMethodName( @RequestParam(required = true, defaultValue = "0") Long ID,
+                                        @RequestParam(required = true, defaultValue = "1") Integer passengers) 
+    {
+        return seatService.getSuggestedSeats(ID, passengers);
+    }
+    
 }

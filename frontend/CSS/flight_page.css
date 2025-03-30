@@ -1,6 +1,13 @@
+.informational
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .flight-container 
 {
-    max-width: 600px;
+    max-width: 70%;
     margin: 20px auto;
     padding: 16px;
     border: 1px solid #ddd;
@@ -8,6 +15,26 @@
     background-color: #f9f9f9;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.legend
+{
+    max-width: 30%;
+}
+
+.legend-box {
+    
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 1px solid #333;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
 .flight-header 
 {
     font-size: 24px;
@@ -20,12 +47,18 @@
 .details h4 
 {
     margin: 4px 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 .seating-plan 
 {
     display: grid;
-    grid-template-columns: repeat(4, 50px);
-    gap: 10px;
+    grid-template-columns: repeat(3, 50px) 20px repeat(3, 50px); /* Add a gap column after 3 columns */
+    gap: 10px; /* Add consistent spacing between rows and columns */
+}
+.seating-plan .seat:nth-child(3n)
+{
+    -right: 10px;
 }
 .seat 
 {
@@ -64,5 +97,16 @@
 
 .seat-selected
 {
-    background-color: beige;
+    background-color: lightyellow;
+    border: 2px solid gold;
+}
+
+.seat-suggested
+{
+    background-color: yellow;
+}
+
+.seat-suggested.seat-selected {
+    background-color: lightyellow;
+    border: 2px solid gold;
 }

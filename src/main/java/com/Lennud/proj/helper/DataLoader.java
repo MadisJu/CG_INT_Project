@@ -29,9 +29,9 @@ public class DataLoader
     {
         flight_access.save(temp);
 
-        for (int i = 1; i <= 40; i++) 
+        for (int i = 1; i <= 60; i++) 
         {
-            int type = (i%4 == 1 || i%4 == 0) ? 2 : 1;
+            int type = (i%6 == 1 || i%6 == 0) ? 2 : 1;
             if(i < 21) type = 3;
             boolean taken = random_gen.nextInt(2) == 1 ? true : false;
             seat_access.save(new Seating(temp, i, type, taken));

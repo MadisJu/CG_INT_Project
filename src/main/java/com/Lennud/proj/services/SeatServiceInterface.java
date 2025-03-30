@@ -10,5 +10,7 @@ public interface SeatServiceInterface
     
 
     List<Seating> getSeating(long flightID);
+
+    List<Integer> getSuggestedSeats(long flightID, int passengers);
     
 }
