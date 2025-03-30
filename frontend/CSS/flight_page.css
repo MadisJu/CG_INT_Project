@@ -60,8 +60,8 @@
 .seating-plan 
 {
     display: grid;
-    grid-template-columns: repeat(3, 50px) 20px repeat(3, 50px); /* Add a gap column after 3 columns */
-    gap: 10px; /* Add consistent spacing between rows and columns */
+    grid-template-columns: repeat(3, 50px) 20px repeat(3, 50px);
+    gap: 10px;
 }
 .seating-plan .seat:nth-child(3n)
 {

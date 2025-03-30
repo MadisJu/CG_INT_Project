@@ -2,8 +2,10 @@ const urlParams = new URLSearchParams(window.location.search);
 const flightID = parseInt(urlParams.get('ID'));
 const passengers = urlParams.get('passengers');
 
+//Muutuja hinna jaoks
 let price = 1;
 
+//Broneeringu saatmine
 document.getElementById("confirm-selection").addEventListener('click', async () => {
 
     const selectedSeats = Array.from(document.querySelectorAll("input[type='checkbox']"))
@@ -40,6 +42,7 @@ document.getElementById("confirm-selection").addEventListener('click', async () 
     }
 });
 
+//Lennu andmete näitamine
 async function displayData(id) 
 {
     const apiUrl = 'http://localhost:8080/api/flight?ID=' + id;
@@ -55,6 +58,7 @@ async function displayData(id)
     price = data.hind;
 }
 
+//Istmete genereerimine
 async function generateSeatingPlan(rows, columns, id) 
 {
     const apiUrl = 'http://localhost:8080/api/seats?ID=' + id;
@@ -131,6 +135,8 @@ async function generateSeatingPlan(rows, columns, id)
     selectionLogic();
 }
 
+
+//Broneerimise loogika
 function selectionLogic()
 {
     checkboxes = Array.from(document.querySelectorAll("input[type='checkbox']")).filter(checkbox => !checkbox.disabled);

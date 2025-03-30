@@ -31,6 +31,7 @@ document.getElementById('fetchButton').addEventListener('click', async function(
         const container = document.getElementById('container');
         container.innerHTML = '';
 
+        //Lendude näitamine ekraanil
         jsonData.forEach((item) => 
         {
             const div = document.createElement('div');
