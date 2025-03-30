@@ -29,9 +29,10 @@ public class FlightController
     public List<Flight> Flights(@RequestParam(required = false) String start,
                                 @RequestParam(required = false) String destination,
                                 @RequestParam(required = false) String date,
-                                @RequestParam(required = false) Float price_max) 
+                                @RequestParam(required = false) Float price_max,
+                                @RequestParam(required = false, defaultValue = "1") Integer passengers) 
     {
-        return flightService.getFlights(start, destination, date, price_max);
+        return flightService.getFlights(start, destination, date, price_max, passengers);
     }
     
     @GetMapping("/api/flight")

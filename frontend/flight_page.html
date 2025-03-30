@@ -12,21 +12,53 @@
 <body>
 
 <div class="flight-container">
-    <div id="flight-info">
-        <!-- Flight Info Placeholder -->
-        <h2 class="flight-header" id="route-placeholder">Route: Placeholder</h2>
-        <div class="details">
-            <h4 id="departure-placeholder">Departure: Placeholder</h4>
-            <h4 id="duration-placeholder">Duration: Placeholder</h4>
-            <h4 id="date-placeholder">Date: Placeholder</h4>
-            <h4 id="price-placeholder">Price: Placeholder</h4>
+    <div class="informational">
+        <div id="flight-info">
+
+            <h2 class="flight-header" id="route-placeholder">Route: Placeholder</h2>
+            <div class="details">
+                <h4 id="departure-placeholder">Departure: Placeholder</h4>
+                <h4 id="duration-placeholder">Duration: Placeholder</h4>
+                <h4 id="date-placeholder">Date: Placeholder</h4>
+                <h4 id="price-placeholder">Price: Placeholder</h4>
+                <h4>(Window = 1.5x, 1st class = 2x)</h4>
+            </div>
+        </div>
+    
+        <div class="legend">
+            <h3>Legend</h3>
+            <div class="legend-item">
+                <div class="seat-first legend-box"></div>
+                <span>First Class Seat</span>
+            </div>
+            <div class="legend-item">
+                <div class="seat-window legend-box"></div>
+                <span>Window Seat</span>
+            </div>
+            <div class="legend-item">
+                <div class="seat-free legend-box"></div>
+                <span>Free Seat</span>
+            </div>
+            <div class="legend-item">
+                <div class="seat-suggested legend-box"></div>
+                <span>Suggested Seat</span>
+            </div>
         </div>
     </div>
+    
 
     <h3>Seating Plan</h3>
-    <div id="seating-container" class="seating-plan">
-        <!-- Seating Plan Placeholder -->
+    <div class="booking">
+        <div id="seating-container" class="seating-plan">
+
+        </div>
+    
+        <div class="purchasecontrols">
+            <label id="total-price-label">Total Price: 0 €</label>
+            <button id="confirm-selection">Confirm Selection</button>
+        </div>
     </div>
+    
 </div>
 
 <script src="JS/flight_page.js"></script>
