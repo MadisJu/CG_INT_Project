@@ -18,18 +18,26 @@ public class FlightController
 {
     @Autowired
     private FlightService flightService;
-
+    
     @GetMapping("/hello")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name) 
     {
         return String.format("Hello %s!", name);
     }
+
     @GetMapping("/api/flights")
     public List<Flight> Flights(@RequestParam(required = false) String start,
                                 @RequestParam(required = false) String destination,
                                 @RequestParam(required = false) String date,
-                                @RequestParam(required = false) Integer price) 
+                                @RequestParam(required = false) Float price_max) 
     {
-        return flightService.getFlights();
+        return flightService.getFlights(start, destination, date, price_max);
     }
+    
+    @GetMapping("/api/flight")
+    public Flight Flight(@RequestParam Long ID) 
+    {
+        return flightService.getFlight(ID);
+    }
+    
 }
