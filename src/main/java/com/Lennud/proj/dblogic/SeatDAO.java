@@ -16,4 +16,7 @@ public interface SeatDAO extends CrudRepository<Seating, SeatingID>
 {
     @Query("SELECT s FROM Seating s WHERE s.flight.ID = :flightID")
     List<Seating> findByFlightID(@Param("flightID") Long flightID);
+
+    @Query("SELECT COUNT(*) FROM Seating s WHERE s.flight.ID = :flightID")
+    int findFreeSeatsByFlightID(@Param("flightID") Long flightID);
 }

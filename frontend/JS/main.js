@@ -10,6 +10,7 @@ document.getElementById('fetchButton').addEventListener('click', async function(
         const destinationdata = document.getElementById('destination').value.trim();
         const datedata = document.getElementById('date').value.trim();
         const priceMaxdata = document.getElementById('price_max').value.trim();
+        const passengers = document.getElementById('passengers').value.trim();
 
         //Parameetrite loomine query jaoks
         let parameters = "";
@@ -17,6 +18,7 @@ document.getElementById('fetchButton').addEventListener('click', async function(
         parameters += destinationdata ? `destination=${destinationdata}&` : "";
         parameters += datedata ? `date=${datedata}&` : "";
         parameters += priceMaxdata ? `price_max=${priceMaxdata}` : "";
+        parameters += passengers ? `passengers=${passengers}` : "";
 
         //Urli kokku panemine ja requestimine
         let filledUrl = apiUrl + "?" + parameters;
@@ -58,7 +60,7 @@ document.getElementById('fetchButton').addEventListener('click', async function(
 
             select.addEventListener('click', () => {
                 const ID = item.id; 
-                window.location.href = `flight_page.html?ID=${ID}`;
+                window.location.href = `flight_page.html?ID=${ID}&passengers=${passengers}`;
             });
                         
             const price = document.createElement('h2');
