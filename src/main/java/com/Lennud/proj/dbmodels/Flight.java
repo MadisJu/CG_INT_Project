@@ -42,4 +42,9 @@ public class Flight
         this.lahkumiseminutid = minute;
         this.hind = price;
     }
+
+    public Long getId() 
+    {
+        return ID;
+    }
 }

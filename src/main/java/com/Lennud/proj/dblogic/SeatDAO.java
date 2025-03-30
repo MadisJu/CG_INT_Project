@@ -14,6 +14,6 @@ import org.springframework.stereotype.Repository;
 
 public interface SeatDAO extends CrudRepository<Seating, SeatingID> 
 {
-    @Query("SELECT s FROM SEATING s WHERE s.flight.id = :flightID")
+    @Query("SELECT s FROM Seating s WHERE s.flight.ID = :flightID")
     List<Seating> findByFlightID(@Param("flightID") Long flightID);
 }
