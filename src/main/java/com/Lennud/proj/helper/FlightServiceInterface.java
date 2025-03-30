@@ -9,5 +9,9 @@ public interface FlightServiceInterface
 
     //Hangi kõik lennud
     List<Flight> getFlights();
+
+    List<Flight> getFlights(String start, String destination, String date, Float price);
+
+    Flight getFlight(Long ID);
     
 }

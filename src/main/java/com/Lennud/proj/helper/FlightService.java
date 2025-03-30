@@ -26,5 +26,20 @@ public class FlightService implements FlightServiceInterface
     {
        return (List <Flight>) flightDAO.findAll();
     }
-    
+
+
+    @Override
+    public List<Flight> getFlights(String start, String destination, String date, Float price) 
+    {
+        System.out.println(destination);
+        return (List<Flight>) flightDAO.findByFilters(start, destination, date, price);
+    }
+
+
+    @Override
+    public Flight getFlight(Long ID) 
+    {
+        return (Flight) flightDAO.findById(ID).get();
+    }
+
 }

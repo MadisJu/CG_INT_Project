@@ -20,6 +20,7 @@ import lombok.NoArgsConstructor;
  */
 public class Flight 
 {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long ID;
@@ -30,4 +31,15 @@ public class Flight
     private int lahkumisetund;
     private int lahkumiseminutid;
     private float hind;
+
+    public Flight(String start, String end, String date, double time, int hour, int minute, float price) 
+    {
+        this.algkoht = start;
+        this.sihtkoht = end;
+        this.kuupäev = date;
+        this.lennuaeg = time;
+        this.lahkumisetund = hour;
+        this.lahkumiseminutid = minute;
+        this.hind = price;
+    }
 }
