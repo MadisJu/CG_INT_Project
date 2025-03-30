@@ -12,4 +12,6 @@ Backend java 21 springboot, frontend html, js, css
 
 Iteratioon 2
 
-1. Lennu broneerimise leht.
+1. Lennu istmete genereerimine andmete hoidimine jm.
+
+3. Lennu broneerimise leht.
