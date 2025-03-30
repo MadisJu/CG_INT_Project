@@ -50,6 +50,13 @@
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
+
+
+.booking
+{
+    display: flex;
+    flex-direction: row;
+}
 .seating-plan 
 {
     display: grid;
@@ -106,7 +113,24 @@
     background-color: yellow;
 }
 
-.seat-suggested.seat-selected {
+.seat-suggested.seat-selected 
+{
     background-color: lightyellow;
     border: 2px solid gold;
+}
+
+
+.purchasecontrols
+{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    gap: 10px;
+}
+
+#total-price-label {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
 }

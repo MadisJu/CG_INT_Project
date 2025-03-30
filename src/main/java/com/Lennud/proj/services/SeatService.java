@@ -102,5 +102,11 @@ public class SeatService implements SeatServiceInterface
 
         return suggestedSeats;
     }
+
+    @Override
+    public void markSeatsAsTaken(long flightID, List<Integer> seats) 
+    {
+        seatDAO.markSeatsAsTaken(flightID, seats);
+    }
     
 }

@@ -1,6 +1,44 @@
 const urlParams = new URLSearchParams(window.location.search);
-const flightID = urlParams.get('ID');
+const flightID = parseInt(urlParams.get('ID'));
 const passengers = urlParams.get('passengers');
+
+let price = 1;
+
+document.getElementById("confirm-selection").addEventListener('click', async () => {
+
+    const selectedSeats = Array.from(document.querySelectorAll("input[type='checkbox']"))
+                            .filter(checkbox => checkbox.checked)
+                            .map(checkbox => parseInt(checkbox.value, 10));
+    if (selectedSeats.length === 0) 
+    {
+        alert("No seats selected!");
+        return;
+    }
+
+    const apiUrl = `http://localhost:8080/api/updateseats`;
+    const payload = 
+    {
+        ID: flightID,
+        selectedSeats: selectedSeats,
+    };
+
+    try 
+    {
+        console.log(JSON.stringify(payload));
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+        });
+
+        location.reload();
+        alert("Booking successful, maybe?");
+
+    } catch (error) {
+        console.error("Error confirming seats:", error);
+        alert("An error occurred. Please try again.");
+    }
+});
 
 async function displayData(id) 
 {
@@ -13,6 +51,8 @@ async function displayData(id)
     document.getElementById("duration-placeholder").textContent = `Duration: ${data.lennuaeg} h`;
     document.getElementById("date-placeholder").textContent = `Date: ${data.kuupäev}`;
     document.getElementById("price-placeholder").textContent = `Price per economy seat: ${data.hind} €`;
+
+    price = data.hind;
 }
 
 async function generateSeatingPlan(rows, columns, id) 
@@ -95,6 +135,37 @@ function selectionLogic()
 {
     checkboxes = Array.from(document.querySelectorAll("input[type='checkbox']")).filter(checkbox => !checkbox.disabled);
 
+    const totalPriceLabel = document.getElementById("total-price-label");
+
+    
+
+    console.log(price);
+
+    function updateTotal()
+    {
+        const checkedBoxes = Array.from(checkboxes).filter(checkbox => checkbox.checked);
+
+        let totalPrice = 0;
+        checkedBoxes.forEach(checkbox => {
+            const seatElement = checkbox.parentElement;
+
+            if (seatElement.classList.contains('seat-first')) 
+            {
+                totalPrice += price * 2;
+            } 
+            else if (seatElement.classList.contains('seat-window')) 
+            {
+                totalPrice += price * 1.5;
+            } 
+            else 
+            {
+                totalPrice += price; 
+            }
+        });
+
+        totalPriceLabel.textContent = `Total Price: ${totalPrice} €`;
+    }
+
     function maxSelected() 
     {
         const checkedBoxes = Array.from(checkboxes).filter(checkbox => checkbox.checked);
@@ -136,6 +207,7 @@ function selectionLogic()
     
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', maxSelected);
+        checkbox.addEventListener('change', updateTotal);
     });
 
 }

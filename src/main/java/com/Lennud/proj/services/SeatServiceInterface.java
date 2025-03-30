@@ -12,5 +12,7 @@ public interface SeatServiceInterface
     List<Seating> getSeating(long flightID);
 
     List<Integer> getSuggestedSeats(long flightID, int passengers);
+
+    void markSeatsAsTaken(long flightID, List<Integer> seats);
     
 }
