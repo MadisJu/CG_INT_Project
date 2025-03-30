@@ -55,6 +55,11 @@ document.getElementById('fetchButton').addEventListener('click', async function(
             const select = document.createElement('button');
             select.className = 'select-button';
             select.textContent = 'Select';
+
+            select.addEventListener('click', () => {
+                const ID = item.id; 
+                window.location.href = `flight_page.html?ID=${ID}`;
+            });
                         
             const price = document.createElement('h2');
             price.textContent = `Price: ${item.hind} €`;

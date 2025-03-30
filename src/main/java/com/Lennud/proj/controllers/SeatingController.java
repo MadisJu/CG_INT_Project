@@ -20,10 +20,10 @@ public class SeatingController
     private SeatService seatService;
 
     @GetMapping("/api/seats")
-    public List<Seating> Seats(@RequestParam(required = true, defaultValue = "0") Long fID)
+    public List<Seating> Seats(@RequestParam(required = true, defaultValue = "0") Long ID)
     {
-        if(fID == 0) return null;
+        if(ID == 0) return null;
 
-        return seatService.getSeating(fID);
+        return seatService.getSeating(ID);
     }
 }

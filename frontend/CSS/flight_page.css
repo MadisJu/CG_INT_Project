@@ -1,0 +1,68 @@
+.flight-container 
+{
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.flight-header 
+{
+    font-size: 24px;
+    color: #333;
+}
+.details, .seating-plan 
+{
+    margin-top: 12px;
+}
+.details h4 
+{
+    margin: 4px 0;
+}
+.seating-plan 
+{
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    gap: 10px;
+}
+.seat 
+{
+    text-align: center;
+}
+.seat input[type="checkbox"] 
+{
+    margin: 0;
+}
+.seat label 
+{
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.seat-first
+{
+    background-color: aquamarine;
+}
+
+.seat-window
+{
+    background-color: cornflowerblue;
+}
+
+.seat-free
+{
+    background-color: green;
+}
+
+.seat-taken
+{
+    background-color: gray;
+}
+
+.seat-selected
+{
+    background-color: beige;
+}
