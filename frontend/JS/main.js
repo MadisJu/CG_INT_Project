@@ -1,11 +1,29 @@
-document.getElementById('fetchButton').addEventListener('click', async function() 
+document.getElementById('fetchButton').addEventListener('click', async function()
 {
+    event.preventDefault();
     const apiUrl = 'http://localhost:8080/api/flights';
 
     try 
     {
-        const response = await fetch(apiUrl);
+        //Andmed filtrist
+        const startdata = document.getElementById('start').value.trim();
+        const destinationdata = document.getElementById('destination').value.trim();
+        const datedata = document.getElementById('date').value.trim();
+        const priceMaxdata = document.getElementById('price_max').value.trim();
+
+        //Parameetrite loomine query jaoks
+        let parameters = "";
+        parameters += startdata ? `start=${startdata}&` : "";
+        parameters += destinationdata ? `destination=${destinationdata}&` : "";
+        parameters += datedata ? `date=${datedata}&` : "";
+        parameters += priceMaxdata ? `price_max=${priceMaxdata}` : "";
+
+        //Urli kokku panemine ja requestimine
+        let filledUrl = apiUrl + "?" + parameters;
+        const response = await fetch(filledUrl);
         const jsonData = await response.json();
+
+        
 
         const container = document.getElementById('container');
         container.innerHTML = '';
