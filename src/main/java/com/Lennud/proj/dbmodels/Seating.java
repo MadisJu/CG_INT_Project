@@ -13,6 +13,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -34,6 +36,7 @@ public class Seating
     @ManyToOne
     @JoinColumn(name = "flightID", referencedColumnName = "ID", nullable = false)
     @MapsId("flight")
+    @JsonIgnore
     private Flight flight;
     @Id
     private int seat;
