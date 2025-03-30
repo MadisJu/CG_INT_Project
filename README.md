@@ -3,6 +3,7 @@
 ## Projekti valmimine
 Antud projekti valmimiseks kulus ligikaudu **2 päeva**. Üldiselt oli töö lihtne, kuid kuna polnud varem **Spring Boot'i** kasutanud, pidin uurima ja õppima dokumentatsiooni wiki kaudu.
 Projektis võib olla segaselt eesti ja inglisekeelseid sõnu. Algselt plaanis teha eesti keeles, kuid aegamööda sain aru et sõnavara ei ole nii lihtne kui inglise keeles
+Projekti valmimisel, segastel momentidel kasutasin Copilotit debuggimiseks. Ning tüütuma html-i osa genereerimiseks.
 
 ## Peamised raskused
 - **CORS reeglid** tekitasid keerukusi ja nõudsid põhjalikumat uurimist.
